@@ -1,0 +1,252 @@
+{
+  "assets": [
+    {
+      "asset_id": "ast-01",
+      "name": "Core Banking Database",
+      "financial_value": 50000000.0,
+      "criticality_weight": 5,
+      "vulnerabilities": [
+        {
+          "vuln_id": "v-01",
+          "cve_id": "CVE-2024-3094",
+          "cvss_score": 10.0,
+          "severity": "CRITICAL"
+        },
+        {
+          "vuln_id": "v-02",
+          "cve_id": "CVE-2023-48795",
+          "cvss_score": 5.9,
+          "severity": "MEDIUM"
+        }
+      ],
+      "controls": [
+        {
+          "control_id": "ctrl-01",
+          "control_name": "Basic Firewall",
+          "effectiveness_score": 0.4,
+          "coverage_percentage": 100.0,
+          "is_active": true,
+          "compliance_tags": [
+            "NIST: PR.AC-3"
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "ast-02",
+      "name": "Customer Web Portal",
+      "financial_value": 20000000.0,
+      "criticality_weight": 4,
+      "vulnerabilities": [
+        {
+          "vuln_id": "v-03",
+          "cve_id": "CVE-2023-38606",
+          "cvss_score": 7.8,
+          "severity": "HIGH"
+        },
+        {
+          "vuln_id": "v-04",
+          "cve_id": "CVE-2022-1234",
+          "cvss_score": 6.5,
+          "severity": "MEDIUM"
+        }
+      ],
+      "controls": [
+        {
+          "control_id": "ctrl-02",
+          "control_name": "WAF",
+          "effectiveness_score": 0.7,
+          "coverage_percentage": 90.0,
+          "is_active": true,
+          "compliance_tags": [
+            "NIST: PR.PT-4"
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "ast-03",
+      "name": "Employee Laptops",
+      "financial_value": 10000000.0,
+      "criticality_weight": 3,
+      "vulnerabilities": [
+        {
+          "vuln_id": "v-05",
+          "cve_id": "CVE-2021-3452",
+          "cvss_score": 8.1,
+          "severity": "HIGH"
+        }
+      ],
+      "controls": [
+        {
+          "control_id": "ctrl-03",
+          "control_name": "Antivirus",
+          "effectiveness_score": 0.5,
+          "coverage_percentage": 80.0,
+          "is_active": true,
+          "compliance_tags": [
+            "NIST: DE.CM-4"
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "ast-04",
+      "name": "Cloud Storage Buckets",
+      "financial_value": 30000000.0,
+      "criticality_weight": 4,
+      "vulnerabilities": [
+        {
+          "vuln_id": "v-06",
+          "cve_id": "CVE-2023-0001",
+          "cvss_score": 9.0,
+          "severity": "CRITICAL"
+        }
+      ],
+      "controls": []
+    },
+    {
+      "asset_id": "ast-05",
+      "name": "Active Directory",
+      "financial_value": 40000000.0,
+      "criticality_weight": 5,
+      "vulnerabilities": [
+        {
+          "vuln_id": "v-07",
+          "cve_id": "CVE-2020-1472",
+          "cvss_score": 10.0,
+          "severity": "CRITICAL"
+        }
+      ],
+      "controls": [
+        {
+          "control_id": "ctrl-04",
+          "control_name": "MFA",
+          "effectiveness_score": 0.8,
+          "coverage_percentage": 50.0,
+          "is_active": true,
+          "compliance_tags": [
+            "NIST: PR.AC-7"
+          ]
+        }
+      ]
+    }
+  ],
+  "candidate_projects": [
+    {
+      "task_id": "TASK-01",
+      "name": "Upgrade Core Banking DB",
+      "cost": 1500000.0,
+      "category": "Database Security",
+      "target_asset_id": "ast-01",
+      "cve_id": "CVE-2024-3094",
+      "new_control": {
+        "control_id": "new-01",
+        "control_name": "DB Patch",
+        "effectiveness_score": 0.95,
+        "coverage_percentage": 100.0,
+        "is_active": true,
+        "compliance_tags": [
+          "NIST: PR.IP-12",
+          "SEBI: Annexure B.2"
+        ]
+      },
+      "compliance_tags": [
+        "NIST: PR.IP-12",
+        "SEBI: Annexure B.2"
+      ]
+    },
+    {
+      "task_id": "TASK-02",
+      "name": "Deploy EDR on Laptops",
+      "cost": 800000.0,
+      "category": "Endpoint Security",
+      "target_asset_id": "ast-03",
+      "cve_id": "CVE-2021-3452",
+      "new_control": {
+        "control_id": "new-02",
+        "control_name": "EDR",
+        "effectiveness_score": 0.85,
+        "coverage_percentage": 100.0,
+        "is_active": true,
+        "compliance_tags": [
+          "NIST: DE.AE-1",
+          "SEBI: Annexure C.1"
+        ]
+      },
+      "compliance_tags": [
+        "NIST: DE.AE-1",
+        "SEBI: Annexure C.1"
+      ]
+    },
+    {
+      "task_id": "TASK-03",
+      "name": "Enforce Strict S3 IAM",
+      "cost": 200000.0,
+      "category": "Cloud Security",
+      "target_asset_id": "ast-04",
+      "cve_id": "CVE-2023-0001",
+      "new_control": {
+        "control_id": "new-03",
+        "control_name": "Strict IAM",
+        "effectiveness_score": 0.9,
+        "coverage_percentage": 100.0,
+        "is_active": true,
+        "compliance_tags": [
+          "NIST: PR.AC-4",
+          "SEBI: Annexure A.1"
+        ]
+      },
+      "compliance_tags": [
+        "NIST: PR.AC-4",
+        "SEBI: Annexure A.1"
+      ]
+    },
+    {
+      "task_id": "TASK-04",
+      "name": "Deploy Next-Gen WAF",
+      "cost": 1200000.0,
+      "category": "Application Security",
+      "target_asset_id": "ast-02",
+      "cve_id": "CVE-2023-38606",
+      "new_control": {
+        "control_id": "new-04",
+        "control_name": "Next-Gen WAF",
+        "effectiveness_score": 0.9,
+        "coverage_percentage": 100.0,
+        "is_active": true,
+        "compliance_tags": [
+          "NIST: PR.PT-4",
+          "SEBI: Annexure D.4"
+        ]
+      },
+      "compliance_tags": [
+        "NIST: PR.PT-4",
+        "SEBI: Annexure D.4"
+      ]
+    },
+    {
+      "task_id": "TASK-05",
+      "name": "Full MFA Rollout",
+      "cost": 500000.0,
+      "category": "Identity",
+      "target_asset_id": "ast-05",
+      "cve_id": "CVE-2020-1472",
+      "new_control": {
+        "control_id": "new-05",
+        "control_name": "Full MFA",
+        "effectiveness_score": 0.99,
+        "coverage_percentage": 100.0,
+        "is_active": true,
+        "compliance_tags": [
+          "NIST: PR.AC-7",
+          "SEBI: Annexure A.2"
+        ]
+      },
+      "compliance_tags": [
+        "NIST: PR.AC-7",
+        "SEBI: Annexure A.2"
+      ]
+    }
+  ]
+}
